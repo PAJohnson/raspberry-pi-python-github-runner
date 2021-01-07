@@ -25,9 +25,12 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Generate build artifact
+        working-directory: ${{ github.workspace }}
         run: python3 src/test.py
 
-      - uses: actions/upload-artifact@v2
+      - name: Upload artifact
+        working-directory: ${{ github.workspace }}
+        uses: actions/upload-artifact@v2
         with:
           name: my-artifact
           path: artifacts/output.txt
