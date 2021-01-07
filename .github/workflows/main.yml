@@ -29,7 +29,7 @@ jobs:
         run: python3 src/test.py
 
       - name: Upload artifact
-        working-directory: ${{ github.workspace }}
+        #working-directory: ${{ github.workspace }}
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
